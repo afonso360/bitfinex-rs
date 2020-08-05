@@ -1,3 +1,4 @@
+use types::*;
 use client::*;
 use errors::*;
 use serde_json::from_str;
@@ -10,8 +11,8 @@ pub struct Order {
     pub symbol: String,
     pub creation_timestamp: i64,
     pub update_timestamp: i64,
-    pub amount: f64,
-    pub amount_original: f64,
+    pub amount: Amount,
+    pub amount_original: Amount,
     pub order_type: String,
     pub previous_order_type: Option<String>,
 
@@ -28,10 +29,10 @@ pub struct Order {
     #[serde(skip_serializing)]
     _placeholder_4: Option<String>,
 
-    pub price: f64,
-    pub price_avg: f64,
-    pub price_trailing: Option<f64>,
-    pub price_aux_limit: Option<f64>,
+    pub price: Price,
+    pub price_avg: Price,
+    pub price_trailing: Option<Price>,
+    pub price_aux_limit: Option<Price>,
     
     #[serde(skip_serializing)]
     __placeholder_5: Option<String>,

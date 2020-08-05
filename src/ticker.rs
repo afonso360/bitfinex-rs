@@ -1,36 +1,37 @@
+use types::*;
 use client::*;
 use errors::*;
 use serde_json::from_str;
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct TradingPair { 
-    pub bid: f64,
-    pub bid_size: f64,   
-    pub ask: f64,                   
-    pub ask_size: f64,
-    pub daily_change: f64,
-    pub daily_change_perc: f64,
-    pub last_price: f64,
-    pub volume: f64,
-    pub high: f64,
-    pub low: f64                    
+    pub bid: Price,
+    pub bid_size: Amount,
+    pub ask: Price,
+    pub ask_size: Amount,
+    pub daily_change: Amount,
+    pub daily_change_perc: Amount,
+    pub last_price: Price,
+    pub volume: Amount,
+    pub high: Price,
+    pub low: Price                    
 }
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct FundingCurrency { 
-    pub frr: f64,
-    pub bid: f64,
+    pub frr: Amount,
+    pub bid: Price,
     pub bid_period: i64,
-    pub bid_size: f64,   
-    pub ask: f64,      
+    pub bid_size: Amount,   
+    pub ask: Price,      
     pub ask_period: i64,              
-    pub ask_size: f64,
-    pub daily_change: f64,
-    pub daily_change_perc: f64,
-    pub last_price: f64,
-    pub volume: f64,
-    pub high: f64,
-    pub low: f64
+    pub ask_size: Amount,
+    pub daily_change: Amount,
+    pub daily_change_perc: Amount,
+    pub last_price: Price,
+    pub volume: Amount,
+    pub high: Price,
+    pub low: Price
 }
 
 #[derive(Clone)]

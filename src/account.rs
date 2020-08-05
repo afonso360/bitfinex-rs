@@ -1,3 +1,4 @@
+use types::*;
 use client::*;
 use errors::*;
 use serde_json::from_str;
@@ -6,9 +7,9 @@ use serde_json::from_str;
 pub struct Wallet { 
     pub wallet_type: String,   
     pub currency: String,                   
-    pub balance: f64,
-    pub unsettled_interest: f64,
-    pub balance_available: Option<f64>             
+    pub balance: Amount,
+    pub unsettled_interest: Amount,
+    pub balance_available: Option<Amount>             
 }
 
 #[derive(Serialize, Deserialize)]
@@ -19,10 +20,10 @@ pub struct MarginBase {
 
 #[derive(Serialize, Deserialize)]
 pub struct Base {
-    pub user_profit_loss: f64,
-    pub user_swaps: f64,      
-    pub margin_balance: f64,
-    pub margin_net: f64        
+    pub user_profit_loss: Amount,
+    pub user_swaps: Amount,      
+    pub margin_balance: Amount,
+    pub margin_net: Amount        
 }
 
 #[derive(Serialize, Deserialize)]
@@ -34,10 +35,10 @@ pub struct MarginSymbol {
 
 #[derive(Serialize, Deserialize)]
 pub struct Symbol {
-    pub tradable_balance: f64,
-    pub gross_balance: f64,
-    pub buy: f64,
-    pub sell: f64,
+    pub tradable_balance: Amount,
+    pub gross_balance: Amount,
+    pub buy: Price,
+    pub sell: Price,
 
     #[serde(skip_serializing)]
     _placeholder_1: Option<String>,
@@ -58,10 +59,10 @@ pub struct FundingInfo {
 
 #[derive(Serialize, Deserialize)]
 pub struct Funding {
-    pub yield_loan: f64,
-    pub yield_lend: f64,
-    pub duration_loan: f64,
-    pub duration_lend: f64
+    pub yield_loan: Amount,
+    pub yield_lend: Amount,
+    pub duration_loan: Amount,
+    pub duration_lend: Amount
 }
 
 #[derive(Clone)]

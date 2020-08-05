@@ -1,3 +1,4 @@
+use types::*;
 use client::*;
 use errors::*;
 use serde_json::from_str;
@@ -48,11 +49,11 @@ impl CandleHistoryParams {
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Candle { 
     pub timestamp: i64,   
-    pub open: f64,                   
-    pub close: f64,
-    pub high: f64,
-    pub low: f64,
-    pub volume: f64                        
+    pub open: Price,                   
+    pub close: Price,
+    pub high: Price,
+    pub low: Price,
+    pub volume: Amount                        
 }
 
 #[derive(Clone)]

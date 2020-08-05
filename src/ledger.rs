@@ -1,3 +1,4 @@
+use types::*;
 use client::*;
 use errors::*;
 use serde_json::from_str;
@@ -9,8 +10,8 @@ pub struct Entry {
     _field3: Option<()>,
     pub timestamp_milli: i64,
     _field5: Option<()>,
-    pub amount: f64,
-    pub balance: f64,
+    pub amount: Amount,
+    pub balance: Amount,
     _field8: Option<()>,
     pub description: String,
 }

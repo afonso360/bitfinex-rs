@@ -1,20 +1,21 @@
+use types::*;
 use client::*;
 use errors::*;
 use serde_json::from_str;
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct TradingPair {
-    pub price: f64,
+    pub price: Price,
     pub count: i64,
-    pub amount: f64,
+    pub amount: Amount,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct FundingCurrency {
-    pub rate: f64,
-    pub period: f64,
+    pub rate: Amount,
+    pub period: Amount,
     pub count: i64,
-    pub amount: f64,
+    pub amount: Amount,
 }
 
 #[derive(Clone)]
@@ -26,8 +27,8 @@ pub struct Book {
 #[derive(Serialize, Deserialize, Debug)]
 pub struct RawBook {
     pub order_id: i64,
-    pub price: f64,
-    pub amount: f64,
+    pub price: Price,
+    pub amount: Amount,
 }
 
 impl Book {
