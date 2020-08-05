@@ -20,6 +20,9 @@ extern crate url;
 #[macro_use] 
 extern crate serde_derive;
 
+#[cfg(feature = "decimal")]
+extern crate rust_decimal;
+
 mod book;
 mod client;
 mod ticker;

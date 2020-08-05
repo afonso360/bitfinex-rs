@@ -28,3 +28,11 @@ reqwest = "0.9"
 url = "2.1"
 log = "0.3"
 tungstenite = "0.9"
+
+rust_decimal = { version = "1.7", optional = true, features = ["serde-float"] }
+
+[features]
+default = []
+
+# Uses a fixed precision decimal for prices and amounts instead of a floating point value
+decimal = ["rust_decimal"]
